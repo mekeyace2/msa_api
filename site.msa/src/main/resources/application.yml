@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: site.msa
+  devtools:
+    restart:
+      enabled: true
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://210.178.108.186:3306/leejonghyuk
+    username: leejonghyuk
+    password: leea1234
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: utf-8
+      force-response: true 
+      enabled: true
+    jsp:
+      init-parameters:
+        development: true
+mybatis:
+  type-aliases-package: site.msa
+  mapper-locations: classpath:/mapper/*.xml

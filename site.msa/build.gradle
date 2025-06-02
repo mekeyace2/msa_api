@@ -1,0 +1,70 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+	//id 'war'
+}
+
+group = 'site.msa'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	
+	//database
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	//spring-boot 3.5.0 없으므로 maven사이트에서 직접 로드
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+	
+	
+	//JSP-Server Core
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	
+	//json
+	/*
+	json-smart 라이브러리는 MSA-API 또는 
+	별도에 API를 생성하여 서버에게 가동시에만 적용 (WAR파일 사용하지 않음)
+	*/
+	implementation 'net.minidev:json-smart:2.5.2'
+	
+	//Database에 값을 이용하여 Front-end가 원하는 형태의 JSON을 생성하는 라이브러리
+	implementation 'org.json:json:20240303'
+	//implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+	
+    //JSP,JSTL
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
+    
+	
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.session:spring-session-core'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
