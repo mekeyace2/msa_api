@@ -27,16 +27,15 @@ class Web extends React.Component{
 		CDN에서 html배열에 push를 사용하여 적용하는 것이 아니라 함수에서 foreach, map을 이용하여
 		즉각 핸들링 이벤트를 적용해야만 핸들링을 할 수 있음
 		*/
+		/*
 		return this.pd.map((a, b) => (
 			<li key={b} onClick={()=>this.getdata(a)}>{a}</li>
 		));
-		
-		/*
-		return this.pd.forEach(a => {
-			console.log(a);
-			//<li key={a} onClick={()=>this.getdata(a)}>{a}</li>
-		});
 		*/
+		this.pd.forEach((a,b,c) => {
+			this.htmls.push(<li key={a} onClick={()=>this.getdata(a)}>{a}</li>)
+		});
+		return this.htmls;
 	}
 	
 	getdata = function(pnm){
