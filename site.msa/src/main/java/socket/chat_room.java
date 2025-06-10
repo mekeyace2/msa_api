@@ -1,4 +1,4 @@
-package site.msa.socket;
+package socket;
 
 import java.util.HashSet;
 import java.util.Set;

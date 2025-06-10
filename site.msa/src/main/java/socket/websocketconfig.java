@@ -1,4 +1,4 @@
-package site.msa.socket;
+package socket;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +9,7 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 import org.springframework.web.socket.server.HandshakeInterceptor;
 
 //서버에 웹 소켓 환경설정을 하는 class
+
 @Configuration	//환경설정 (configure.xml)
 @EnableWebSocket		//websocket을 라이브러리를 사용하기 위한 어노테이션
 public class websocketconfig implements WebSocketConfigurer {

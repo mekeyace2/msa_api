@@ -1,4 +1,4 @@
-package site.msa.socket;
+package socket;
 
 import org.springframework.stereotype.Repository;
 
