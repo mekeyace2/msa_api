@@ -26,6 +26,9 @@ repositories {
 
 dependencies {
 	
+	//websocket
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	
 	//database
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	runtimeOnly 'com.mysql:mysql-connector-j'
