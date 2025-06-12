@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>데이터 insert 페이지</title>
+</head>
+<body>
+<form id="frm" method="post" action="./datainsert.do">
+제품코드 : <input type="text" name="pcode">
+제품명 : <input type="text" name="pnm">
+재고현황 : <input type="text" name="pea">
+<br><br>
+<input type="button" value="입고처리" id="insert_btn">
+</form>
+</body>
+<script src="./jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+<script src="./websocket.js?v=1"></script>
+</html>

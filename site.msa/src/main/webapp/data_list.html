@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>데이터 리스트 페이지</title>
+</head>
+<style>
+.message {
+position:absolute;
+opacity: 0;
+right:0;
+bottom:0;
+width:400px;
+height:40px;
+background-color: orange;
+text-align: center;
+line-height: 40px;
+border-radius: 15px;
+}
+
+.closebtn { 
+display: block;
+width:30px;
+height:30px;
+line-height: 30px;
+position: absolute;
+right:0;
+cursor: pointer;
+}
+
+</style>
+<body>
+<table border="1" width="600">
+<thead>
+<tr align="center">
+<th>번호</th>
+<th>제품코드</th>
+<th>제품명</th>
+<th>재고현황</th>
+</tr>
+</thead>
+<tbody>
+<tr align="center">
+<td>1</td>
+<td>123</td>
+<td align="left">연습제품</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<input type="button" value="재고입고 입력" onclick="location.href='./data_insert.html';">
+<div class="message" id="message">
+<span class="closebtn" id="closebtn">X</span>
+<div id="msg"></div>
+</div>
+
+<script src="./jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+<script src="./websocket.js"></script>
+</body>
+</html>
